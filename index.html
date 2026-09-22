@@ -1754,6 +1754,72 @@ body:before{
   }
 }
 
+
+/* ===== MOBILE-PHOTO-CENTER-FIX-20260922 =====
+   Keep reveal gap fix, but restore centering transform for wide article photos.
+*/
+@media(max-width:768px){
+  .motion-zone .display-photo,
+  .motion-ready .motion-zone .display-photo,
+  .motion-ready .motion-zone .display-photo.reveal,
+  .motion-ready .motion-zone .display-photo.figure-reveal,
+  .article-after-interactive .display-photo,
+  .post-interactive .display-photo{
+    position:relative!important;
+    left:50%!important;
+    right:auto!important;
+    width:calc(100vw - 20px)!important;
+    max-width:none!important;
+    margin:22px 0 28px!important;
+    margin-left:0!important;
+    margin-right:0!important;
+    transform:translateX(-50%)!important;
+    opacity:1!important;
+    visibility:visible!important;
+    clip-path:none!important;
+  }
+
+  .motion-zone .display-photo img,
+  .article-after-interactive .display-photo img,
+  .post-interactive .display-photo img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    max-width:none!important;
+    aspect-ratio:4/3!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+    margin:0!important;
+    transform:none!important;
+    opacity:1!important;
+    visibility:visible!important;
+    border-radius:20px!important;
+  }
+
+  .motion-zone .display-photo figcaption,
+  .article-after-interactive .display-photo figcaption,
+  .post-interactive .display-photo figcaption{
+    display:block!important;
+    width:100%!important;
+    max-width:none!important;
+    margin:10px 0 0!important;
+    padding:0 6px!important;
+    box-sizing:border-box!important;
+    font-size:11px!important;
+    line-height:1.55!important;
+    text-align:left!important;
+    color:#6f645b!important;
+    transform:none!important;
+  }
+
+  .motion-zone .display-photo:before{
+    left:10px!important;
+    right:auto!important;
+    top:10px!important;
+    transform:none!important;
+  }
+}
+
 </style>
 </head>
 <body>

@@ -877,6 +877,262 @@ body:before{
   }
 }
 
+
+/* ===== V14 · animated post-interactive display ===== */
+.article-after-interactive,
+.post-interactive{
+  position:relative;
+  padding-top:72px;
+  padding-bottom:64px;
+  isolation:isolate;
+}
+.article-after-interactive{
+  background:
+    radial-gradient(circle at 94% 8%,rgba(184,79,66,.11),transparent 20%),
+    radial-gradient(circle at 6% 88%,rgba(211,167,79,.10),transparent 22%),
+    #fbf4ef;
+  box-shadow:0 0 0 100vmax #fbf4ef;
+  clip-path:inset(0 -100vmax);
+}
+.post-interactive{
+  background:
+    radial-gradient(circle at 8% 12%,rgba(120,131,109,.14),transparent 21%),
+    radial-gradient(circle at 94% 78%,rgba(86,98,125,.10),transparent 22%),
+    #f3f3ec;
+  box-shadow:0 0 0 100vmax #f3f3ec;
+  clip-path:inset(0 -100vmax);
+}
+.article-after-interactive:after,
+.post-interactive:after{
+  content:"";
+  position:absolute;
+  width:220px;height:220px;border-radius:50%;
+  z-index:-1;
+  filter:blur(2px);
+  opacity:.38;
+  animation:v14float 9s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+.article-after-interactive:after{
+  right:-120px;top:18%;
+  background:radial-gradient(circle,#f0c2b4 0 28%,rgba(240,194,180,0) 70%);
+}
+.post-interactive:after{
+  left:-120px;top:32%;
+  background:radial-gradient(circle,#cfd8c4 0 28%,rgba(207,216,196,0) 70%);
+}
+@keyframes v14float{
+  from{transform:translate3d(0,-16px,0) scale(.96)}
+  to{transform:translate3d(14px,24px,0) scale(1.08)}
+}
+
+.display-section-head{
+  position:relative;
+  margin:6px 0 24px;
+  padding-top:18px;
+}
+.display-section-head + .display-signal{margin-top:6px}
+.display-meta{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:12px;
+  font-family:Pretendard,"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;
+}
+.display-meta span{
+  display:grid;place-items:center;
+  width:34px;height:34px;border-radius:50%;
+  font-size:11px;font-weight:900;letter-spacing:.04em;
+}
+.display-meta b{
+  font-size:11px;letter-spacing:.12em;font-weight:900;
+  color:#776a62;
+}
+.section-coral .display-meta span{background:#edc2b5;color:#943f36}
+.section-gold .display-meta span{background:#ecd99f;color:#75581f}
+.section-sage .display-meta span{background:#d5dfce;color:#596550}
+.display-section-head h2{
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  background:none!important;
+  font-size:clamp(32px,4vw,48px)!important;
+  line-height:1.18!important;
+  letter-spacing:-.045em!important;
+}
+.display-section-head h2:after{
+  content:"";
+  display:block;
+  width:100%;
+  height:10px;
+  margin-top:-4px;
+  border-radius:999px;
+  transform-origin:left center;
+  transform:scaleX(.02);
+  transition:transform .85s cubic-bezier(.2,.8,.2,1) .12s;
+}
+.section-coral h2:after{background:linear-gradient(90deg,#e7a896,rgba(231,168,150,0))}
+.section-gold h2:after{background:linear-gradient(90deg,#ddbd68,rgba(221,189,104,0))}
+.section-sage h2:after{background:linear-gradient(90deg,#a9b79e,rgba(169,183,158,0))}
+.display-section-head.inview h2:after{transform:scaleX(1)}
+
+.display-signal{
+  position:relative;
+  overflow:hidden;
+  margin:0 0 30px;
+  padding:22px 24px 21px;
+  border-radius:24px;
+}
+.display-signal:before{
+  content:"";
+  position:absolute;inset:-60% auto -60% -22%;
+  width:54%;border-radius:50%;
+  opacity:.42;
+  transform:translateX(-28%);
+  transition:transform 1s cubic-bezier(.2,.8,.2,1);
+}
+.display-signal.inview:before{transform:translateX(0)}
+.signal-coral{background:#f2d9d0}
+.signal-coral:before{background:#efb09e}
+.signal-gold{background:#efe1b5}
+.signal-gold:before{background:#e0bd63}
+.signal-sage{background:#dee6d7}
+.signal-sage:before{background:#b7c6ab}
+.display-signal strong,
+.display-signal small{position:relative;z-index:1}
+.display-signal strong{
+  display:flex;align-items:baseline;gap:13px;flex-wrap:wrap;
+  font-family:Pretendard,"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;
+  font-size:clamp(38px,6vw,70px);
+  line-height:.98;
+  letter-spacing:-.06em;
+  font-weight:950;
+  color:#2c2521;
+}
+.display-signal strong i{
+  font-style:normal;
+  font-weight:500;
+  color:rgba(44,37,33,.38);
+}
+.display-signal small{
+  display:block;
+  margin-top:10px;
+  font-size:12px;
+  line-height:1.45;
+  color:#61564e;
+  font-weight:700;
+}
+
+.motion-ready .motion-zone .reveal{
+  opacity:0;
+  transform:translateY(34px);
+  transition:
+    opacity .72s ease,
+    transform .82s cubic-bezier(.2,.75,.2,1);
+  transition-delay:var(--reveal-delay,0ms);
+}
+.motion-ready .motion-zone .reveal.inview{
+  opacity:1;
+  transform:none;
+}
+.motion-ready .motion-zone .stat-grid.reveal{
+  transform:translateY(24px) scale(.985);
+}
+.motion-ready .motion-zone .stat-grid.reveal.inview{transform:none}
+.motion-ready .motion-zone .stat-grid .stat{
+  transition:transform .55s cubic-bezier(.2,.8,.2,1),box-shadow .55s ease;
+}
+.motion-ready .motion-zone .stat-grid.inview .stat:nth-child(1){transition-delay:80ms}
+.motion-ready .motion-zone .stat-grid.inview .stat:nth-child(2){transition-delay:160ms}
+.motion-ready .motion-zone .stat-grid.inview .stat:nth-child(3){transition-delay:240ms}
+.motion-ready .motion-zone .stat-grid.inview .stat{
+  animation:v14card .7s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes v14card{
+  0%{transform:translateY(22px) rotate(-1deg);opacity:.15}
+  100%{transform:none;opacity:1}
+}
+.motion-ready .motion-zone .figure-reveal{
+  opacity:1;
+  transform:none;
+  clip-path:inset(0 0 100% 0 round 26px);
+  transition:clip-path 1.05s cubic-bezier(.2,.75,.2,1);
+}
+.motion-ready .motion-zone .figure-reveal.inview{
+  clip-path:inset(0 0 0 0 round 26px);
+}
+.figure-reveal img{
+  transform:scale(1.07);
+  transition:transform 1.25s cubic-bezier(.2,.75,.2,1);
+}
+.figure-reveal.inview img{transform:scale(1)}
+.motion-ready .motion-zone .quote-reveal{
+  transform:translateX(-34px);
+}
+.motion-ready .motion-zone .quote-reveal.inview{transform:none}
+.quote-reveal:after{
+  content:"";
+  position:absolute;
+  left:-3px;top:0;bottom:0;
+  width:3px;
+  background:#b84f42;
+  transform-origin:top;
+  transform:scaleY(0);
+  transition:transform .8s cubic-bezier(.2,.8,.2,1) .18s;
+}
+.quote-reveal.inview:after{transform:scaleY(1)}
+.quote-reveal .who{
+  transition:letter-spacing .7s ease .2s,opacity .7s ease .2s;
+}
+.motion-ready .quote-reveal .who{opacity:.25;letter-spacing:.08em}
+.motion-ready .quote-reveal.inview .who{opacity:1;letter-spacing:0}
+
+@media(hover:hover){
+  .article-after-interactive .article-figure img,
+  .post-interactive .article-figure img{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+  .article-after-interactive .article-figure:hover img,
+  .post-interactive .article-figure:hover img{transform:scale(1.025)}
+}
+@media(max-width:620px){
+  .article-after-interactive,.post-interactive{
+    padding-top:54px;
+    padding-bottom:48px;
+  }
+  .display-section-head{margin-bottom:20px;padding-top:8px}
+  .display-meta span{width:30px;height:30px;font-size:10px}
+  .display-meta b{font-size:9px}
+  .display-section-head h2{
+    font-size:clamp(27px,8vw,36px)!important;
+    line-height:1.22!important;
+  }
+  .display-section-head h2:after{height:7px;margin-top:-2px}
+  .display-signal{
+    padding:18px 18px 17px;
+    border-radius:19px;
+    margin-bottom:25px;
+  }
+  .display-signal strong{
+    font-size:clamp(34px,12vw,50px);
+    gap:9px;
+  }
+  .display-signal small{font-size:10px;margin-top:8px}
+  .motion-ready .motion-zone .reveal{transform:translateY(22px)}
+  .motion-ready .motion-zone .quote-reveal{transform:translateX(-20px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .article-after-interactive:after,.post-interactive:after{animation:none}
+  .motion-ready .motion-zone .reveal,
+  .motion-ready .motion-zone .figure-reveal,
+  .motion-ready .motion-zone .quote-reveal,
+  .display-section-head h2:after,
+  .display-signal:before,
+  .figure-reveal img{
+    opacity:1!important;
+    transform:none!important;
+    clip-path:none!important;
+    transition:none!important;
+    animation:none!important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -962,54 +1218,66 @@ body:before{
   </div>
  </section>
 
- <div class="wrap article-after-interactive">
-  <h2>바뀌는 명절 풍경, 상차림도 최대한 간소하게</h2>
+ <div class="wrap article-after-interactive motion-zone">
+  <div class="display-section-head reveal section-coral">
+   <div class="display-meta"><span>01</span><b>간소화되는 차례상</b></div>
+   <h2>바뀌는 명절 풍경, 상차림도 최대한 간소하게</h2>
+  </div>
+  <div class="display-signal reveal signal-coral"><strong><span>40%</span><i>→</i><span>27% 수준</span></strong><small>올해 추석에 차례를 지내겠다는 가구</small></div>
 
-  <p>올해 추석에 차례를 지내겠다는 가구가 40%에서 27% 수준으로 급감하며 1년 만에 큰 폭으로 줄어든 것으로 나타났다.</p>
+  <p class="reveal">올해 추석에 차례를 지내겠다는 가구가 40%에서 27% 수준으로 급감하며 1년 만에 큰 폭으로 줄어든 것으로 나타났다.</p>
 
-  <p>20일 한국농촌경제연구원(KREI)이 전국 소비자 1000명을 대상으로 진행한 '2026년 추석 성수기 주요 과일류 구매 행태 및 공급 전망' 조사 결과에 따르면, 올해 추석에 차례를 지낼 계획이 있다고 응답한 가구는 27.3%에 그쳤다. 차례 장소는 '본가'가 51.3%로 절반을 넘는 등 예년과 비슷한 흐름을 보였다. 본인 집은 21.2%, 친인척 집 18.7%, 성묘지 또는 종중 시설은 7.7%였다.</p>
+  <p class="reveal">20일 한국농촌경제연구원(KREI)이 전국 소비자 1000명을 대상으로 진행한 '2026년 추석 성수기 주요 과일류 구매 행태 및 공급 전망' 조사 결과에 따르면, 올해 추석에 차례를 지낼 계획이 있다고 응답한 가구는 27.3%에 그쳤다. 차례 장소는 '본가'가 51.3%로 절반을 넘는 등 예년과 비슷한 흐름을 보였다. 본인 집은 21.2%, 친인척 집 18.7%, 성묘지 또는 종중 시설은 7.7%였다.</p>
 
-  <div class="stat-grid">
+  <div class="stat-grid reveal">
    <div class="stat"><div class="num">27.3%</div><div class="txt">올해 추석에 차례를 지낼 계획이 있다고 응답한 가구</div></div>
    <div class="stat"><div class="num">51.3%</div><div class="txt">차례 장소로 '본가'를 꼽은 응답</div></div>
    <div class="stat"><div class="num">50.9%</div><div class="txt">차례를 지내는 집 중 상차림을 간소화하고 있다는 응답</div></div>
-  </div><p>차례를 지내는 집 중 절반이 넘는 50.9%는 '상차림을 간소화하고 있다'고 답했다. 반면 엄격한 전통 예법 그대로 차례상을 준비하겠다는 응답은 20.1%에 불과했다. 이어 가족이 좋아하는 음식 위주로 준비하거나 '직접 만든 음식과 구매 제품을 섞어서 쓴다'는 반응이 뒤를 이었다.</p>
+  </div><p class="reveal">차례를 지내는 집 중 절반이 넘는 50.9%는 '상차림을 간소화하고 있다'고 답했다. 반면 엄격한 전통 예법 그대로 차례상을 준비하겠다는 응답은 20.1%에 불과했다. 이어 가족이 좋아하는 음식 위주로 준비하거나 '직접 만든 음식과 구매 제품을 섞어서 쓴다'는 반응이 뒤를 이었다.</p>
 
-  <h2>“재료비만 30만원 훌쩍”… 장보기 물가 폭등에 한숨</h2>
+  <div class="display-section-head reveal section-gold">
+   <div class="display-meta"><span>02</span><b>장보기 물가</b></div>
+   <h2>“재료비만 30만원 훌쩍”… 장보기 물가 폭등에 한숨</h2>
+  </div>
+  <div class="display-signal reveal signal-gold"><strong>30만3750원</strong><small>4인 가족 · 전통시장 구매 기준 차례상 준비 비용</small></div>
 
-  <p>이 같은 현상의 주원인은 단연 꺾일 줄 모르는 '장보기 물가'다. 한국농수산식품유통공사(aT) 등에 따르면 애호박 1개 소매가격은 2279원으로 전년 대비 48% 가까이 폭등했고, 전을 부칠 때 필수인 계란(10구 4194원)과 대두유 국제가격도 각각 10.2%, 39.9% 치솟았다. 이에 비해 올 추석 차례상을 준비하는 데 드는 비용은 30만3750원(4인 가족, 전통시장 구매 기준)으로 지난해보다 4.1% 올랐다.</p>
+  <p class="reveal">이 같은 현상의 주원인은 단연 꺾일 줄 모르는 '장보기 물가'다. 한국농수산식품유통공사(aT) 등에 따르면 애호박 1개 소매가격은 2279원으로 전년 대비 48% 가까이 폭등했고, 전을 부칠 때 필수인 계란(10구 4194원)과 대두유 국제가격도 각각 10.2%, 39.9% 치솟았다. 이에 비해 올 추석 차례상을 준비하는 데 드는 비용은 30만3750원(4인 가족, 전통시장 구매 기준)으로 지난해보다 4.1% 올랐다.</p>
 
-  <figure class="article-figure">
+  <figure class="article-figure reveal figure-reveal">
    <img src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202609%2F21%2Fakn%2F20260921093244245ibov.jpg" alt="추석 명절을 앞두고 시장에서 시민들이 장을 보는 모습" loading="lazy" referrerpolicy="no-referrer">
    <figcaption>2026년 9월 18일, 추석 명절을 일주일 앞둔 광주 서구 상무금요시장에서 시민들이 장을 보고 있다. <span class="credit">연합뉴스</span></figcaption>
   </figure>
 
-  <blockquote class="editorial-quote">
-   <p>“갈비찜과 잡채, 전 재료비만 해도 40만원을 우습게 넘겨 부담”이라며 “특히 추석에 송편은 직접 빚는 것이 번거로워 미리 사고 얼려두는 것이 합리적”이라고 말했다. 또한 그는 “명절 상뿐만 아니라, 친척들을 맞이하느라 드는 음식값이나 자잘한 집수리 비용도 만만치 않다”고 토로했다.</p>
+  <blockquote class="editorial-quote reveal quote-reveal">
+   <p class="reveal">“갈비찜과 잡채, 전 재료비만 해도 40만원을 우습게 넘겨 부담”이라며 “특히 추석에 송편은 직접 빚는 것이 번거로워 미리 사고 얼려두는 것이 합리적”이라고 말했다. 또한 그는 “명절 상뿐만 아니라, 친척들을 맞이하느라 드는 음식값이나 자잘한 집수리 비용도 만만치 않다”고 토로했다.</p>
    <div class="who">직장인 최모씨(53)</div>
   </blockquote>
 
-  <p>제수용품의 구성도 눈에 띄게 달라졌다. 차례상에 수입 과일을 올리겠다고 답한 가구는 38.8%로 지난해보다 늘어났다. 수입 과일로는 바나나(61.3%)가 가장 많았고 수입 포도(46.2%), 오렌지(23.6%)가 뒤를 이었다. 국산 과일 중에서는 사과(97.4%)와 배(96.0%)가 필수 품목으로 꼽혔으며, 단감(60.4%), 포도(45.4%), 감귤(25.6%) 순으로 나타났다.</p>
+  <p class="reveal">제수용품의 구성도 눈에 띄게 달라졌다. 차례상에 수입 과일을 올리겠다고 답한 가구는 38.8%로 지난해보다 늘어났다. 수입 과일로는 바나나(61.3%)가 가장 많았고 수입 포도(46.2%), 오렌지(23.6%)가 뒤를 이었다. 국산 과일 중에서는 사과(97.4%)와 배(96.0%)가 필수 품목으로 꼽혔으며, 단감(60.4%), 포도(45.4%), 감귤(25.6%) 순으로 나타났다.</p>
  </div>
 
- <div class="wrap post-interactive">
-  <h2>유통가 강타한 '명절 간편식' 열풍</h2>
+ <div class="wrap post-interactive motion-zone">
+  <div class="display-section-head reveal section-sage">
+   <div class="display-meta"><span>03</span><b>간편식과 달라진 명절</b></div>
+   <h2>유통가 강타한 '명절 간편식' 열풍</h2>
+  </div>
+  <div class="display-signal reveal signal-sage"><strong>14.7% ↑</strong><small>이마트 전·떡갈비 등 명절 간편식 매출 증가</small></div>
 
-  <p>이 같은 변화는 유통업계의 실적으로도 직결되고 있다. 이마트의 최근 전과 떡갈비 등 명절 간편식 매출은 전년 동기 대비 14.7% 늘었고, 롯데마트와 컬리 등 주요 유통사들도 관련 가정간편식 판매량이 일제히 증가세를 보였다. 이에 발맞춰 이마트는 앱을 통한 모둠전 사전예약 서비스를 도입하는 등 수요 선점에 나섰다.</p>
+  <p class="reveal">이 같은 변화는 유통업계의 실적으로도 직결되고 있다. 이마트의 최근 전과 떡갈비 등 명절 간편식 매출은 전년 동기 대비 14.7% 늘었고, 롯데마트와 컬리 등 주요 유통사들도 관련 가정간편식 판매량이 일제히 증가세를 보였다. 이에 발맞춰 이마트는 앱을 통한 모둠전 사전예약 서비스를 도입하는 등 수요 선점에 나섰다.</p>
 
-  <figure class="article-figure">
+  <figure class="article-figure reveal figure-reveal">
    <img src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202609%2F21%2Fakn%2F20260921093245804sanr.jpg" alt="서울 마포구 망원시장에서 차례상에 올릴 전을 판매하는 모습" loading="lazy" referrerpolicy="no-referrer">
    <figcaption>서울 마포구 망원시장의 한 가게에서 차례상에 올릴 전을 판매하고 있다. <span class="credit">아시아경제 조용준 기자</span></figcaption>
   </figure>
 
-  <p>명절 문화를 대하는 사회적 인식도 크게 바뀌고 있다.</p>
+  <p class="reveal">명절 문화를 대하는 사회적 인식도 크게 바뀌고 있다.</p>
 
-  <blockquote class="editorial-quote">
-   <p>“추석 연휴에는 안 모이고, 전 주에 산소를 방문하는 정도로만 하는 것으로 바꾼 지 몇 년 됐는데 집안이 평화로워졌다”며 “추석에는 부모님도, 자녀들도 각자 자유 일정을 보내며 쉬거나 여행을 가고, 친척끼리는 1년에 한 두 번 정도 따로 외식한다”고 전했다.</p>
+  <blockquote class="editorial-quote reveal quote-reveal">
+   <p class="reveal">“추석 연휴에는 안 모이고, 전 주에 산소를 방문하는 정도로만 하는 것으로 바꾼 지 몇 년 됐는데 집안이 평화로워졌다”며 “추석에는 부모님도, 자녀들도 각자 자유 일정을 보내며 쉬거나 여행을 가고, 친척끼리는 1년에 한 두 번 정도 따로 외식한다”고 전했다.</p>
    <div class="who">SNS 이용자 윤모씨(32)</div>
   </blockquote>
 
-  <p>연구원 측은 이번 조사에서 “차례상을 준비하는 가구가 지난해보다 크게 감소했고, 차례를 지내는 가구에서도 상차림 간소화가 뚜렷하게 나타났다”고 정리했다. 명절의 의미가 점점 '합리성과 휴식' 위주로 재편되는 가운데, 명절 상차림 간소화 및 간편식 선호 흐름이 계속될 것으로 보인다.</p>
+  <p class="reveal">연구원 측은 이번 조사에서 “차례상을 준비하는 가구가 지난해보다 크게 감소했고, 차례를 지내는 가구에서도 상차림 간소화가 뚜렷하게 나타났다”고 정리했다. 명절의 의미가 점점 '합리성과 휴식' 위주로 재편되는 가운데, 명절 상차림 간소화 및 간편식 선호 흐름이 계속될 것으로 보인다.</p>
  </div>
 </article>
 
@@ -1116,6 +1384,28 @@ const observer=new IntersectionObserver(entries=>{
 },{rootMargin:'-44% 0px -44% 0px',threshold:0});
 stepEls.forEach(el=>observer.observe(el));
 update(-1);
+
+/* V14 post-interactive motion */
+(function(){
+  const targets=[...document.querySelectorAll('.motion-zone .reveal')];
+  if(!targets.length) return;
+  document.documentElement.classList.add('motion-ready');
+  targets.forEach((el,i)=>el.style.setProperty('--reveal-delay',(Math.min(i%4,3)*55)+'ms'));
+  if(!('IntersectionObserver' in window)){
+    targets.forEach(el=>el.classList.add('inview'));
+    return;
+  }
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('inview');
+        io.unobserve(entry.target);
+      }
+    });
+  },{rootMargin:'0px 0px -12% 0px',threshold:.12});
+  targets.forEach(el=>io.observe(el));
+})();
+
 </script>
 </body>
 </html>

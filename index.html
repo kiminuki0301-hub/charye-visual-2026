@@ -1662,6 +1662,98 @@ body:before{
   .intstep{padding-left:10px!important;padding-right:10px!important}
 }
 
+
+/* ===== MOBILE-GAP-FIX-20260922 =====
+   Prevent hidden reveal blocks from reserving large blank space on phones.
+   Desktop motion remains unchanged.
+*/
+@media(max-width:768px){
+  .motion-ready .motion-zone .reveal,
+  .motion-ready .motion-zone .reveal.inview,
+  .article-after-interactive .reveal,
+  .post-interactive .reveal{
+    opacity:1!important;
+    visibility:visible!important;
+    transform:none!important;
+    filter:none!important;
+    clip-path:none!important;
+    animation:none!important;
+    transition:none!important;
+    min-height:0!important;
+    height:auto!important;
+  }
+
+  .article-after-interactive,
+  .post-interactive{
+    min-height:0!important;
+    height:auto!important;
+    padding-top:38px!important;
+    padding-bottom:38px!important;
+  }
+
+  .motion-zone{
+    min-height:0!important;
+    height:auto!important;
+  }
+
+  .article-after-interactive p,
+  .post-interactive p{
+    margin-top:0!important;
+    margin-bottom:20px!important;
+  }
+
+  .article-after-interactive .stat-grid,
+  .post-interactive .stat-grid{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+    width:100%!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:22px 0 26px!important;
+    padding:0!important;
+    opacity:1!important;
+    visibility:visible!important;
+    transform:none!important;
+    position:relative!important;
+  }
+
+  .article-after-interactive .stat-grid .stat,
+  .post-interactive .stat-grid .stat{
+    display:block!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:0!important;
+    opacity:1!important;
+    visibility:visible!important;
+    transform:none!important;
+    animation:none!important;
+  }
+
+  .display-section-head{
+    margin-top:28px!important;
+    margin-bottom:18px!important;
+  }
+  .display-section-head:first-child{margin-top:0!important}
+
+  .display-signal{
+    margin-top:16px!important;
+    margin-bottom:24px!important;
+  }
+
+  .article-figure,
+  .motion-zone .display-photo,
+  .airport-photo{
+    margin-top:24px!important;
+    margin-bottom:26px!important;
+  }
+
+  .editorial-quote{
+    margin-top:26px!important;
+    margin-bottom:28px!important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1951,5 +2043,41 @@ update(-1);
 
 </script>
 <!-- airport-photo-deploy-20260922 -->
+
+<script>
+/* MOBILE-GAP-FIX-20260922: reveal safety for iframe/article mobile views */
+(function(){
+  function normalizeMobileReveal(){
+    if(window.innerWidth>768) return;
+    document.querySelectorAll('.motion-zone .reveal,.article-after-interactive .reveal,.post-interactive .reveal').forEach(function(el){
+      el.classList.add('inview');
+      el.style.opacity='1';
+      el.style.visibility='visible';
+      el.style.transform='none';
+      el.style.filter='none';
+      el.style.clipPath='none';
+      el.style.minHeight='0';
+      el.style.height='auto';
+    });
+    document.querySelectorAll('.article-after-interactive .stat-grid,.post-interactive .stat-grid').forEach(function(el){
+      el.classList.add('inview');
+      el.style.display='grid';
+      el.style.opacity='1';
+      el.style.visibility='visible';
+      el.style.transform='none';
+      el.style.minHeight='0';
+      el.style.height='auto';
+    });
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',normalizeMobileReveal,{once:true});
+  }else{
+    normalizeMobileReveal();
+  }
+  window.addEventListener('pageshow',normalizeMobileReveal);
+  window.addEventListener('resize',normalizeMobileReveal);
+})();
+</script>
+
 </body>
 </html>

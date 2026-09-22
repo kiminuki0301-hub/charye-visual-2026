@@ -485,6 +485,9 @@ img{display:block;max-width:100%}
   .interactive-outro p{font-size:14px}
 }
 
+
+/* ===== V9 hero photo refinement ===== */
+.hero-aside{min-height:0;display:block;align-self:center}.hero-aside:before,.hero-moon,.hero-kitchen,.hero-table,.hero-grain,.bowl,.plate{display:none!important}.hero-photo{margin:0;position:relative}.hero-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 44%;border-radius:24px;border:1px solid rgba(170,145,116,.24);box-shadow:0 20px 48px rgba(74,53,37,.13)}.hero-photo:after{content:"";position:absolute;inset:0;border-radius:24px;background:linear-gradient(180deg,rgba(52,34,22,0) 58%,rgba(43,29,19,.32) 100%);pointer-events:none}.hero-photo figcaption{position:absolute;z-index:2;left:18px;right:18px;bottom:15px;margin:0;color:rgba(255,250,244,.94);font-size:11px;line-height:1.48;text-shadow:0 1px 4px rgba(32,20,13,.45)}.hero-photo figcaption span{font-weight:800;color:#fff}.hero-aside .hero-statline{margin-top:12px;grid-template-columns:repeat(3,1fr);gap:8px}.hero-aside .hero-statline .mini{background:rgba(250,246,240,.88);border-radius:12px;padding:13px 12px;border:1px solid rgba(198,180,158,.7);box-shadow:none}.hero-aside .hero-statline b{font-size:24px}.hero-aside .hero-statline span{font-size:11px;line-height:1.45}@media(max-width:980px){.hero-aside{order:-1;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(210px,.7fr);gap:10px;align-items:stretch}.hero-photo img{aspect-ratio:16/10;border-radius:20px}.hero-photo:after{border-radius:20px}.hero-aside .hero-statline{margin-top:0;grid-template-columns:1fr;gap:8px}.hero-aside .hero-statline .mini{display:flex;align-items:center;gap:10px;padding:12px}.hero-aside .hero-statline b{min-width:90px;font-size:22px}}@media(max-width:620px){.hero-aside{display:block}.hero-photo img{aspect-ratio:4/3;object-position:center 46%;border-radius:16px}.hero-photo:after{border-radius:16px}.hero-photo figcaption{left:12px;right:12px;bottom:10px;font-size:9.5px}.hero-aside .hero-statline{margin-top:8px;grid-template-columns:repeat(3,1fr);gap:5px}.hero-aside .hero-statline .mini{display:block;padding:10px 8px;border-radius:10px}.hero-aside .hero-statline b{min-width:0;font-size:18px;line-height:1.05}.hero-aside .hero-statline span{font-size:8px;line-height:1.35;margin-top:5px}}
 </style>
 </head>
 <body>
@@ -497,22 +500,15 @@ img{display:block;max-width:100%}
    <div class="dek">차례를 지내는 가구가 1년 새 큰 폭으로 줄었다. 차례를 지내더라도 전통 방식을 그대로 고수하기보다, 상차림을 간소화하거나 구매한 음식을 활용하는 흐름이 뚜렷해지고 있다.</div>
    <div class="byline"><span>elsie@asiae.co.kr</span><span>2026.09.21</span></div>
   </div>
-  <aside class="hero-aside" aria-hidden="true">
-   <div class="hero-moon"></div>
-   <div class="hero-kitchen">
-    <div class="hero-table">
-     <div class="hero-grain"></div>
-     <div class="bowl b1"></div>
-     <div class="bowl b2"></div>
-     <div class="bowl b3"></div>
-     <div class="bowl b4"></div>
-     <div class="plate small"></div>
-    </div>
-    <div class="hero-statline">
-     <div class="mini"><b>27.3%</b><span>올해 차례를 지낼 계획이 있는 가구</span></div>
-     <div class="mini"><b>50.9%</b><span>차례를 지내는 집 중 상차림을 간소화</span></div>
-     <div class="mini"><b>30만3750원</b><span>4인 가족 기준 차례상 준비 비용</span></div>
-    </div>
+  <aside class="hero-aside">
+   <figure class="hero-photo">
+    <img src="https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202609%2F21%2Fakn%2F20260921093241618pjel.jpg" alt="서울 은평구 은평한옥마을 예서헌에서 열린 추석 차례상 시연 행사" loading="eager" referrerpolicy="no-referrer">
+    <figcaption>전통 차례상 차림과 차례 예법을 소개하는 추석 차례상 시연 행사. <span>연합뉴스</span></figcaption>
+   </figure>
+   <div class="hero-statline">
+    <div class="mini"><b>27.3%</b><span>올해 차례를 지낼 계획이 있는 가구</span></div>
+    <div class="mini"><b>50.9%</b><span>차례를 지내는 집 중 상차림을 간소화</span></div>
+    <div class="mini"><b>30만3750원</b><span>4인 가족 기준 차례상 준비 비용</span></div>
    </div>
   </aside>
  </div>

@@ -1295,6 +1295,373 @@ body:before{
   .airport-photo figcaption{font-size:11px!important}
 }
 
+
+/* ===== MOBILE-STAGE-V15-20260922 =====
+   PC/tablet layout remains unchanged. Phones get a full sticky altar stage,
+   ghosted full-table silhouette, overlay story cards and visual fatigue cues.
+*/
+.mobile-hud{display:none}
+@media(max-width:768px){
+  .interactive-shell{
+    margin:58px 0 64px;
+    overflow:visible;
+  }
+  .interactive-intro{
+    padding:46px 16px 34px;
+  }
+  .interactive-intro h2{
+    font-size:clamp(34px,10vw,48px);
+    line-height:1.04;
+  }
+  .interactive-intro p{
+    max-width:560px;
+    font-size:13px;
+    line-height:1.72;
+  }
+
+  /* Restore PC-style scrollytelling behavior on mobile */
+  .interactive-story{position:relative;overflow:visible}
+  .interactive-sticky{
+    position:sticky!important;
+    top:0!important;
+    width:100%;
+    height:100svh!important;
+    min-height:620px;
+    padding:0!important;
+    display:flex!important;
+    align-items:stretch!important;
+    justify-content:stretch!important;
+    z-index:2;
+  }
+  @supports(height:100dvh){
+    .interactive-sticky{height:100dvh!important}
+  }
+
+  .workstage{
+    width:100%!important;
+    height:100%!important;
+    min-height:620px!important;
+    max-height:none!important;
+    display:block!important;
+    position:relative!important;
+    overflow:hidden!important;
+    border-radius:0!important;
+    border-left:0!important;
+    border-right:0!important;
+    background:
+      radial-gradient(circle at 50% 20%,rgba(255,249,236,.82),transparent 30%),
+      linear-gradient(180deg,#e7ded4 0%,#d9cec1 48%,#cdbfae 100%)!important;
+    box-shadow:none!important;
+  }
+  .workstage:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:3;
+    pointer-events:none;
+    opacity:calc(.06 + .62 * var(--progress));
+    transition:opacity .45s ease;
+    background:
+      radial-gradient(circle at 50% 53%,rgba(191,90,48,.26),transparent 36%),
+      radial-gradient(circle at 18% 62%,rgba(144,61,43,.16),transparent 23%),
+      linear-gradient(180deg,transparent 46%,rgba(67,42,31,.18) 100%);
+    mix-blend-mode:multiply;
+  }
+  .workstage:after{
+    z-index:4!important;
+    background:
+      radial-gradient(circle at 50% 45%,transparent 48%,rgba(62,42,31,calc(.05 + .18 * var(--progress))) 100%)!important;
+  }
+
+  /* Small mobile HUD: time / completion / fatigue */
+  .mobile-hud{
+    display:grid;
+    grid-template-columns:auto auto auto minmax(48px,1fr);
+    align-items:center;
+    gap:7px;
+    position:absolute;
+    left:12px;
+    right:12px;
+    top:max(10px,env(safe-area-inset-top));
+    z-index:30;
+    min-height:42px;
+    padding:8px 10px;
+    border:1px solid rgba(105,82,65,.15);
+    border-radius:15px;
+    background:rgba(249,245,239,.84);
+    -webkit-backdrop-filter:blur(12px);
+    backdrop-filter:blur(12px);
+    box-shadow:0 8px 24px rgba(62,42,31,.10);
+    color:#342b25;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:-.01em;
+  }
+  .mobile-time{color:#8f4338}
+  .mobile-complete{white-space:nowrap}
+  .mobile-fatigue-label{color:#6e6259;font-size:9px}
+  .mobile-fatigue-track{
+    display:block;
+    height:7px;
+    overflow:hidden;
+    border-radius:999px;
+    background:rgba(77,61,50,.12);
+  }
+  .mobile-fatigue-track i{
+    display:block;
+    width:0;
+    height:100%;
+    border-radius:999px;
+    background:linear-gradient(90deg,#d5ac57 0%,#b85243 58%,#5d6177 100%);
+    transition:width .45s ease;
+  }
+
+  /* Mobile stage is intentionally simplified; desktop sidebars are untouched */
+  .side.left{display:none!important}
+  .workmain{
+    position:relative!important;
+    z-index:5!important;
+    width:100%;
+    height:100%;
+    padding:0!important;
+    display:block!important;
+  }
+  .tablewrap{
+    position:absolute!important;
+    left:10px;
+    right:10px;
+    top:64px;
+    bottom:142px;
+    z-index:5;
+    min-height:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+
+  /* The whole table is visible from the start; completed foods gain full color */
+  .altar{
+    width:min(100%,540px)!important;
+    max-height:100%;
+    aspect-ratio:1.28/1!important;
+    grid-template-columns:repeat(3,1fr)!important;
+    grid-template-rows:repeat(4,1fr)!important;
+    gap:5px!important;
+    padding:8px 8px 12px!important;
+    border:5px solid #573729!important;
+    border-bottom-width:12px!important;
+    border-radius:18px!important;
+    box-shadow:
+      inset 0 1px rgba(255,255,255,.10),
+      0 22px 38px rgba(62,39,27,.23)!important;
+    transform:perspective(900px) rotateX(3deg) scale(calc(1 - .008 * var(--progress)))!important;
+    transform-origin:50% 62%;
+  }
+  .food{
+    border:1px solid rgba(255,235,203,.16)!important;
+    border-radius:10px!important;
+    background:rgba(255,255,255,.025)!important;
+  }
+  .food img{
+    width:98%!important;
+    height:98%!important;
+    opacity:.13!important;
+    transform:none!important;
+    filter:grayscale(.82) sepia(.18) saturate(.48) brightness(.78)!important;
+    transition:opacity .5s ease,filter .5s ease,transform .55s cubic-bezier(.18,1.14,.32,1)!important;
+  }
+  .food.done{
+    border-color:rgba(255,229,183,.30)!important;
+    background:radial-gradient(circle at 50% 48%,rgba(222,178,103,.17),transparent 70%)!important;
+  }
+  .food.done img{
+    opacity:1!important;
+    transform:scale(1)!important;
+    filter:saturate(1.03) brightness(1.03)!important;
+  }
+  .food.just img{
+    animation:mobileDishIn .72s cubic-bezier(.18,1.24,.32,1)!important;
+  }
+  @keyframes mobileDishIn{
+    0%{opacity:.18;transform:translateY(-18px) scale(.82);filter:saturate(.55)}
+    66%{opacity:1;transform:translateY(2px) scale(1.06)}
+    100%{opacity:1;transform:none}
+  }
+  .empty{display:none!important}
+  .fname{
+    left:4px!important;
+    bottom:3px!important;
+    max-width:calc(100% - 8px);
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size:7px!important;
+    color:rgba(255,248,237,.78)!important;
+  }
+
+  /* The desktop work heading becomes the opening overlay card */
+  .worktop{
+    position:absolute!important;
+    left:14px;
+    right:14px;
+    bottom:max(18px,env(safe-area-inset-bottom));
+    z-index:24;
+    display:block!important;
+    margin:0!important;
+    padding:15px 16px 16px;
+    border:1px solid rgba(103,79,62,.16);
+    border-left:4px solid #b84f42;
+    border-radius:9px 19px 19px 9px;
+    background:rgba(251,248,244,.91);
+    -webkit-backdrop-filter:blur(13px);
+    backdrop-filter:blur(13px);
+    box-shadow:0 14px 36px rgba(59,39,27,.17);
+    transition:opacity .25s ease,transform .25s ease;
+  }
+  .worktop h3{
+    margin:0!important;
+    font-family:"Noto Serif KR",serif;
+    font-size:21px!important;
+    line-height:1.25!important;
+    letter-spacing:-.035em!important;
+    color:#302720!important;
+  }
+  .worktop p{
+    margin:6px 0 0!important;
+    font-size:11px!important;
+    line-height:1.55!important;
+    color:#6d6158!important;
+  }
+  .workcounter{
+    margin-top:7px;
+    font-size:10px!important;
+    color:#915044!important;
+  }
+  .workstage.started .worktop{
+    opacity:0;
+    transform:translateY(10px);
+    pointer-events:none;
+  }
+  .workbottom{display:none!important}
+
+  /* Human fatigue stays visible as a compact visual cue */
+  .side.right{
+    display:block!important;
+    position:absolute!important;
+    right:12px;
+    top:58px;
+    width:72px!important;
+    height:94px;
+    z-index:18!important;
+    padding:0!important;
+    overflow:visible;
+    border:0!important;
+    background:transparent!important;
+  }
+  .side.right>.side-label,
+  .side.right>.pressurewords{display:none!important}
+  .side.right .figurebox{
+    width:72px;
+    height:94px!important;
+    margin:0!important;
+    border:1px solid rgba(101,82,69,.15)!important;
+    border-radius:18px!important;
+    background:rgba(236,229,219,.72)!important;
+    -webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);
+    box-shadow:0 8px 20px rgba(55,38,28,.08);
+  }
+  .side.right .figure{
+    bottom:-2px!important;
+    transform:translateX(-50%) scale(.35) rotate(calc(0deg + 11deg * var(--progress)))!important;
+    transform-origin:50% 100%!important;
+  }
+  .side.right .figurelabel{display:none!important}
+  .side.right .figurebox:after{
+    content:"피로 누적";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:6px;
+    text-align:center;
+    font-size:7px;
+    font-weight:800;
+    color:rgba(105,59,48,calc(.42 + .42 * var(--progress)));
+    letter-spacing:.02em;
+  }
+
+  /* Overlay story cards scroll across the fixed altar */
+  .intsteps{
+    position:relative!important;
+    z-index:40!important;
+    margin-top:-100svh!important;
+    pointer-events:none!important;
+  }
+  @supports(height:100dvh){
+    .intsteps{margin-top:-100dvh!important}
+  }
+  .intstep{
+    min-height:82svh!important;
+    display:flex!important;
+    align-items:flex-end!important;
+    justify-content:center!important;
+    margin:0!important;
+    padding:0 14px 10vh!important;
+  }
+  .intcard{
+    width:min(100%,480px)!important;
+    margin:0 auto!important;
+    padding:14px 15px 15px!important;
+    border:1px solid rgba(106,81,63,.18)!important;
+    border-left:4px solid #b84f42!important;
+    border-radius:9px 19px 19px 9px!important;
+    background:rgba(252,249,245,.92)!important;
+    -webkit-backdrop-filter:blur(13px);
+    backdrop-filter:blur(13px);
+    box-shadow:0 16px 38px rgba(58,38,26,.18)!important;
+    opacity:0!important;
+    visibility:hidden!important;
+    transform:translateY(14px) scale(.985)!important;
+    transition:opacity .24s ease,transform .24s ease,visibility .24s!important;
+  }
+  .intstep.active .intcard{
+    opacity:1!important;
+    visibility:visible!important;
+    transform:none!important;
+  }
+  .intcard .time{font-size:9px!important}
+  .intcard h4{
+    margin:4px 0 6px!important;
+    font-size:18px!important;
+    line-height:1.28!important;
+  }
+  .intcard .work{
+    margin-bottom:5px!important;
+    font-size:10px!important;
+  }
+  .intcard p{
+    margin:0!important;
+    font-size:11px!important;
+    line-height:1.55!important;
+  }
+
+  .interactive-outro{
+    position:relative;
+    z-index:3;
+    padding:58px 20px 64px!important;
+  }
+}
+
+/* Slightly tighter phones */
+@media(max-width:390px){
+  .tablewrap{left:6px;right:6px;top:60px;bottom:148px}
+  .altar{gap:3px!important;padding:6px 6px 10px!important}
+  .mobile-hud{left:8px;right:8px;gap:5px;padding:8px}
+  .side.right{right:8px}
+  .worktop{left:10px;right:10px}
+  .intstep{padding-left:10px!important;padding-right:10px!important}
+}
+
 </style>
 </head>
 <body>
@@ -1338,7 +1705,7 @@ body:before{
 
   <div class="interactive-story">
    <div class="interactive-sticky">
-    <section class="workstage">
+    <section class="workstage"><div class="mobile-hud" aria-hidden="true"><span class="mobile-time" id="mobileTime">전날 14:00</span><span class="mobile-complete" id="mobileComplete">완성 0 / 12</span><span class="mobile-fatigue-label">피로</span><span class="mobile-fatigue-track"><i id="mobileFatigue"></i></span></div>
      <aside class="side left">
       <div class="side-label">현재 시각</div>
       <div class="clock" id="clock">전날 14:00</div>
@@ -1472,6 +1839,10 @@ const nowWork=document.getElementById('nowWork');
 const nowLead=document.getElementById('nowLead');
 const left=document.getElementById('left');
 const pressureWords=[...document.querySelectorAll('#pressureWords span')];
+const workstage=document.querySelector('.workstage');
+const mobileTime=document.getElementById('mobileTime');
+const mobileComplete=document.getElementById('mobileComplete');
+const mobileFatigue=document.getElementById('mobileFatigue');
 
 function subjectParticle(word){
  const s=String(word).trim();
@@ -1517,6 +1888,12 @@ function update(i){
  laborBar.style.height=(Math.max(.02,p)*100)+'%';
  done.textContent=Math.max(0,count);
  left.textContent=`남은 음식 ${foods.length-Math.max(0,count)}개`;
+ if(workstage){
+   workstage.classList.toggle('started',i>=0);
+   workstage.classList.toggle('complete',i===foods.length-1);
+ }
+ if(mobileComplete)mobileComplete.textContent=`완성 ${Math.max(0,count)} / 12`;
+ if(mobileFatigue)mobileFatigue.style.width=Math.round(p*100)+'%';
 
  history.innerHTML='';
  for(let k=0;k<=i;k++){
@@ -1541,6 +1918,7 @@ function update(i){
    nowWork.textContent=f.work;
    nowLead.textContent=f.lead;
  }
+ if(mobileTime)mobileTime.textContent=clock.textContent;
 }
 
 const observer=new IntersectionObserver(entries=>{

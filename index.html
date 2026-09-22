@@ -1133,6 +1133,67 @@ body:before{
   }
 }
 
+
+/* ===== V15 · original article photos as section anchors ===== */
+.motion-zone .display-photo{
+  width:min(1040px,calc(100vw - 40px));
+  position:relative;
+  left:50%;
+  margin:26px 0 34px;
+  margin-left:-50vw;
+  left:calc(50% + 50vw - 50%);
+  border-radius:30px;
+  overflow:visible;
+}
+.motion-zone .display-photo img{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  border-radius:30px;
+  box-shadow:0 26px 60px rgba(65,44,32,.14);
+}
+.motion-zone .display-photo figcaption{
+  max-width:760px;
+  margin:12px auto 0;
+  padding:0 4px;
+}
+.motion-zone .display-photo:before{
+  content:"원문 사진";
+  position:absolute;
+  z-index:3;
+  left:18px;
+  top:18px;
+  padding:7px 10px 6px;
+  border-radius:999px;
+  background:rgba(30,25,22,.72);
+  color:#fff;
+  font:800 10px/1 Pretendard,"Noto Sans KR","Apple SD Gothic Neo",sans-serif;
+  letter-spacing:.08em;
+  backdrop-filter:blur(8px);
+}
+@media(max-width:760px){
+  .motion-zone .display-photo{
+    width:calc(100vw - 20px);
+    left:50%;
+    margin-left:-50vw;
+    left:calc(50% + 50vw - 50%);
+    margin-top:20px;
+    margin-bottom:28px;
+  }
+  .motion-zone .display-photo img{
+    aspect-ratio:4/3;
+    border-radius:20px;
+  }
+  .motion-zone .display-photo:before{
+    left:10px;top:10px;
+    font-size:8px;
+    padding:6px 8px 5px;
+  }
+  .motion-zone .display-photo figcaption{
+    padding:0 2px;
+    font-size:11px;
+  }
+}
 </style>
 </head>
 <body>
@@ -1241,14 +1302,13 @@ body:before{
   </div>
   <div class="display-signal reveal signal-gold"><strong>30만3750원</strong><small>4인 가족 · 전통시장 구매 기준 차례상 준비 비용</small></div>
 
-  <p class="reveal">이 같은 현상의 주원인은 단연 꺾일 줄 모르는 '장보기 물가'다. 한국농수산식품유통공사(aT) 등에 따르면 애호박 1개 소매가격은 2279원으로 전년 대비 48% 가까이 폭등했고, 전을 부칠 때 필수인 계란(10구 4194원)과 대두유 국제가격도 각각 10.2%, 39.9% 치솟았다. 이에 비해 올 추석 차례상을 준비하는 데 드는 비용은 30만3750원(4인 가족, 전통시장 구매 기준)으로 지난해보다 4.1% 올랐다.</p>
-
-  <figure class="article-figure reveal figure-reveal">
+  <figure class="article-figure reveal figure-reveal display-photo">
    <img src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202609%2F21%2Fakn%2F20260921093244245ibov.jpg" alt="추석 명절을 앞두고 시장에서 시민들이 장을 보는 모습" loading="lazy" referrerpolicy="no-referrer">
    <figcaption>2026년 9월 18일, 추석 명절을 일주일 앞둔 광주 서구 상무금요시장에서 시민들이 장을 보고 있다. <span class="credit">연합뉴스</span></figcaption>
   </figure>
 
-  <blockquote class="editorial-quote reveal quote-reveal">
+  <p class="reveal">이 같은 현상의 주원인은 단연 꺾일 줄 모르는 '장보기 물가'다. 한국농수산식품유통공사(aT) 등에 따르면 애호박 1개 소매가격은 2279원으로 전년 대비 48% 가까이 폭등했고, 전을 부칠 때 필수인 계란(10구 4194원)과 대두유 국제가격도 각각 10.2%, 39.9% 치솟았다. 이에 비해 올 추석 차례상을 준비하는 데 드는 비용은 30만3750원(4인 가족, 전통시장 구매 기준)으로 지난해보다 4.1% 올랐다.</p>
+<blockquote class="editorial-quote reveal quote-reveal">
    <p class="reveal">“갈비찜과 잡채, 전 재료비만 해도 40만원을 우습게 넘겨 부담”이라며 “특히 추석에 송편은 직접 빚는 것이 번거로워 미리 사고 얼려두는 것이 합리적”이라고 말했다. 또한 그는 “명절 상뿐만 아니라, 친척들을 맞이하느라 드는 음식값이나 자잘한 집수리 비용도 만만치 않다”고 토로했다.</p>
    <div class="who">직장인 최모씨(53)</div>
   </blockquote>
@@ -1263,14 +1323,13 @@ body:before{
   </div>
   <div class="display-signal reveal signal-sage"><strong>14.7% ↑</strong><small>이마트 전·떡갈비 등 명절 간편식 매출 증가</small></div>
 
-  <p class="reveal">이 같은 변화는 유통업계의 실적으로도 직결되고 있다. 이마트의 최근 전과 떡갈비 등 명절 간편식 매출은 전년 동기 대비 14.7% 늘었고, 롯데마트와 컬리 등 주요 유통사들도 관련 가정간편식 판매량이 일제히 증가세를 보였다. 이에 발맞춰 이마트는 앱을 통한 모둠전 사전예약 서비스를 도입하는 등 수요 선점에 나섰다.</p>
-
-  <figure class="article-figure reveal figure-reveal">
+  <figure class="article-figure reveal figure-reveal display-photo">
    <img src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202609%2F21%2Fakn%2F20260921093245804sanr.jpg" alt="서울 마포구 망원시장에서 차례상에 올릴 전을 판매하는 모습" loading="lazy" referrerpolicy="no-referrer">
    <figcaption>서울 마포구 망원시장의 한 가게에서 차례상에 올릴 전을 판매하고 있다. <span class="credit">아시아경제 조용준 기자</span></figcaption>
   </figure>
 
-  <p class="reveal">명절 문화를 대하는 사회적 인식도 크게 바뀌고 있다.</p>
+  <p class="reveal">이 같은 변화는 유통업계의 실적으로도 직결되고 있다. 이마트의 최근 전과 떡갈비 등 명절 간편식 매출은 전년 동기 대비 14.7% 늘었고, 롯데마트와 컬리 등 주요 유통사들도 관련 가정간편식 판매량이 일제히 증가세를 보였다. 이에 발맞춰 이마트는 앱을 통한 모둠전 사전예약 서비스를 도입하는 등 수요 선점에 나섰다.</p>
+<p class="reveal">명절 문화를 대하는 사회적 인식도 크게 바뀌고 있다.</p>
 
   <blockquote class="editorial-quote reveal quote-reveal">
    <p class="reveal">“추석 연휴에는 안 모이고, 전 주에 산소를 방문하는 정도로만 하는 것으로 바꾼 지 몇 년 됐는데 집안이 평화로워졌다”며 “추석에는 부모님도, 자녀들도 각자 자유 일정을 보내며 쉬거나 여행을 가고, 친척끼리는 1년에 한 두 번 정도 따로 외식한다”고 전했다.</p>

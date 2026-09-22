@@ -1262,6 +1262,39 @@ body:before{
   }
 }
 
+
+/* ===== V17 · force airport photo visible ===== */
+.airport-photo,
+.motion-ready .motion-zone .airport-photo.reveal,
+.motion-ready .motion-zone .airport-photo.figure-reveal{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+  clip-path:none!important;
+}
+.airport-photo img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+  border-radius:26px;
+}
+.airport-photo figcaption{
+  display:block!important;
+  opacity:1!important;
+  visibility:visible!important;
+  color:#6f645b!important;
+  font-size:13px!important;
+  line-height:1.6!important;
+  margin-top:12px!important;
+}
+@media(max-width:620px){
+  .airport-photo img{border-radius:18px}
+  .airport-photo figcaption{font-size:11px!important}
+}
+
 </style>
 </head>
 <body>

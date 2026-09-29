@@ -848,3 +848,54 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
   padding:8px!important;
   background:#fff!important;
 }
+
+
+/* 2026-09-29 final media sizing: same width, natural aspect ratio */
+.money-step[data-money-step="2"] .money-step-photo,
+.money-step[data-money-step="3"] .money-step-photo,
+.money-step[data-money-step="4"] .money-step-photo{
+  width:min(100%,460px)!important;
+  max-width:460px!important;
+  height:auto!important;
+  min-height:0!important;
+  margin:22px 0 0!important;
+  display:block!important;
+  overflow:visible!important;
+  background:transparent!important;
+}
+.money-step[data-money-step="2"] .money-step-photo img,
+.money-step[data-money-step="3"] .money-step-photo img,
+.money-step[data-money-step="4"] .money-step-photo img{
+  width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  transform:none!important;
+  padding:0!important;
+  display:block!important;
+}
+.money-step[data-money-step="4"] .money-step-photo img{
+  background:#fff!important;
+  border:1px solid #d3cec4!important;
+}
+.money-step[data-money-step="2"] .money-step-photo figcaption,
+.money-step[data-money-step="3"] .money-step-photo figcaption,
+.money-step[data-money-step="4"] .money-step-photo figcaption{
+  width:100%!important;
+  height:auto!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:8px 0 0!important;
+}
+@media(max-width:768px){
+  .money-step[data-money-step="2"] .money-step-photo,
+  .money-step[data-money-step="3"] .money-step-photo,
+  .money-step[data-money-step="4"] .money-step-photo{
+    width:min(100%,360px)!important;
+    max-width:360px!important;
+    height:auto!important;
+    margin:18px 0 0!important;
+  }
+}

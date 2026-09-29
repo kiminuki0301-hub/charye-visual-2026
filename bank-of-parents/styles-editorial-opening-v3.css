@@ -272,3 +272,44 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
   .last-copy{padding-left:52%}
   .last-copy h2{max-width:790px;font-size:clamp(3.1rem,3.9vw,5.35rem)}
 }
+
+/* Final ending copy lock */
+.last-copy .last-preface,
+.last-copy h2,
+.last-copy h2 span,
+.last-copy h2 em{
+  word-break:keep-all;
+  overflow-wrap:normal;
+}
+.last-copy h2 span,
+.last-copy h2 em{display:inline}
+@media(min-width:901px){
+  .last-copy h2 br{display:block}
+  .last-copy h2{max-width:760px}
+}
+@media(max-width:900px){
+  .last-copy h2 br{display:block}
+}
+@media(max-width:768px){
+  .last-copy{
+    align-items:flex-start;
+    text-align:left;
+    justify-content:flex-end;
+    padding:0 0 58px 0;
+  }
+  .last-copy .last-preface,
+  .last-copy h2{
+    max-width:100%;
+    width:100%;
+    margin-left:0;
+    margin-right:0;
+  }
+  .last-copy .last-preface{
+    font-size:1rem!important;
+    line-height:1.55!important;
+  }
+  .last-copy h2{
+    font-size:clamp(1.85rem,7.4vw,2.6rem);
+    line-height:1.32;
+  }
+}

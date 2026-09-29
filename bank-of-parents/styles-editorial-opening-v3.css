@@ -635,3 +635,16 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
   .story-photo-break figcaption{left:12px;bottom:10px;font-size:.6rem}
 }
 @media(prefers-reduced-motion:reduce){.story-photo-break img{transition:none!important;transform:none!important}}
+
+/* Money step editorial photos */
+.money-step-photo{margin:24px 0 0;overflow:hidden;background:#ddd6c9}
+.money-step-photo img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;transform:scale(1.01);transition:transform .7s ease}
+.money-step.is-active .money-step-photo img{transform:scale(1.045)}
+.money-step-photo figcaption{padding:8px 0 0;font-size:.7rem;line-height:1.55;color:var(--sub)}
+@media(max-width:768px){
+  .money-step-photo{margin-top:18px}
+  .money-step-photo img{aspect-ratio:4/3}
+  .money-step[data-money-step="2"] .money-step-photo img{object-position:center 52%}
+  .money-step[data-money-step="3"] .money-step-photo img{object-position:center 48%}
+}
+@media(prefers-reduced-motion:reduce){.money-step-photo img{transition:none!important;transform:none!important}}

@@ -111,3 +111,31 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
   .gen-note{font-size:.72rem!important;line-height:1.68!important}
 }
 @media(prefers-reduced-motion:reduce){.gen-bar i::after{transform:none!important;transition:none!important}}
+
+/* Family funding gap callout */
+.family-support-compare{margin:0 0 42px;padding:28px 0 30px;border-top:1px solid var(--ink);border-bottom:1px solid #b9c1b8}
+.family-support-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:22px}
+.family-support-head span{font-family:MaruBuri,serif;font-size:clamp(1.35rem,2vw,1.9rem);font-weight:600;letter-spacing:-.04em}
+.family-support-head strong{font-size:.78rem;color:var(--rust);letter-spacing:.04em}
+.family-support-bars{display:grid;gap:14px}
+.family-support-row{display:grid;grid-template-columns:62px minmax(0,1fr) 72px minmax(170px,260px);gap:14px;align-items:center}
+.family-support-row .age{font-family:MaruBuri,serif;font-size:1.05rem;font-weight:600}
+.family-support-row .track{height:22px;background:#c8cec5;overflow:hidden}
+.family-support-row .track i{display:block;height:100%;width:var(--family-w);background:#b9c0b8;transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.family-support-row.twenties .track i{background:var(--rust)}
+.family-support-row strong{font-family:MaruBuri,serif;font-size:1.3rem;letter-spacing:-.04em;text-align:right}
+.family-support-row.twenties strong{color:var(--rust)}
+.family-support-row small{font-size:.72rem;color:var(--sub);line-height:1.45}
+.generations.in-view .family-support-row .track i{transform:none}
+.family-support-note{margin:18px 0 0!important;padding-top:13px;border-top:1px solid rgba(84,96,88,.18);font-family:"Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif!important;font-size:.75rem!important;line-height:1.7!important;letter-spacing:0!important;color:var(--sub)!important}
+@media(max-width:768px){
+  .family-support-compare{margin-bottom:30px;padding:22px 0}
+  .family-support-head{display:block;margin-bottom:16px}
+  .family-support-head strong{display:block;margin-top:5px;font-size:.72rem}
+  .family-support-row{grid-template-columns:48px minmax(0,1fr) 58px;gap:8px 10px}
+  .family-support-row small{grid-column:2/-1;font-size:.68rem;margin-top:-3px}
+  .family-support-row .track{height:17px}
+  .family-support-row strong{font-size:1.08rem}
+  .family-support-note{font-size:.71rem!important}
+}
+@media(prefers-reduced-motion:reduce){.family-support-row .track i{transform:none!important;transition:none!important}}

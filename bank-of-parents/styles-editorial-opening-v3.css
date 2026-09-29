@@ -549,3 +549,59 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
   .last-copy{padding:24px 18px 30px}
   .last-copy h2{font-size:clamp(1.7rem,7.5vw,2.15rem)}
 }
+
+
+/* Interactive story layer: 2026-09-29 final */
+.money-journey{background:#efeae0;padding:110px 0 80px;border-top:1px solid #d3cec4;border-bottom:1px solid #d3cec4}
+.money-journey-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.8fr);gap:clamp(48px,7vw,110px);align-items:start}
+.money-stage{position:sticky;top:7vh;min-height:78vh;display:flex;flex-direction:column;justify-content:center}
+.money-stage h2{font-size:clamp(2.8rem,4.8vw,5.4rem)}
+.money-total{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:28px 0 16px;padding-bottom:14px;border-bottom:1px solid #9ca39d}
+.money-total span,.money-now span{font-size:.76rem;color:var(--sub);letter-spacing:.08em}
+.money-total strong{font-family:MaruBuri,serif;font-size:clamp(2rem,3vw,3.4rem);letter-spacing:-.05em}
+.money-meter{height:126px;position:relative;background:#d7d7d0;overflow:hidden;isolation:isolate;box-shadow:inset 0 0 0 1px rgba(45,55,50,.08)}
+.money-meter>i{position:absolute;top:0;bottom:0;transform:scaleX(0);transform-origin:left center;transition:transform .75s cubic-bezier(.22,.8,.22,1);z-index:2}
+.money-self{left:0;width:26.4%;background:#cbbfae}
+.money-bank{left:26.4%;width:34.8%;background:var(--bank)}
+.money-family{left:61.2%;width:22.8%;background:var(--rust)}
+.money-other{left:84%;width:16%;background:var(--sage)}
+.money-stage[data-stage="1"] .money-self,
+.money-stage[data-stage="2"] .money-self,.money-stage[data-stage="2"] .money-bank,
+.money-stage[data-stage="3"] .money-self,.money-stage[data-stage="3"] .money-bank,.money-stage[data-stage="3"] .money-family,
+.money-stage[data-stage="4"] .money-meter>i{transform:scaleX(1)}
+.money-empty{position:absolute;z-index:3;right:18px;top:50%;transform:translateY(-50%);font-size:.75rem;color:#666f69;transition:opacity .35s}
+.money-stage[data-stage="4"] .money-empty{opacity:0}
+.money-now{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.money-now strong{font-family:MaruBuri,serif;font-size:clamp(1.5rem,2.2vw,2.2rem);color:var(--rust)}
+.money-key{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 18px;margin-top:22px;font-size:.76rem;color:var(--sub)}
+.money-key span{display:flex;align-items:center;gap:8px}.money-key i{width:10px;height:10px;display:inline-block}.k-self{background:#cbbfae}.k-bank{background:var(--bank)}.k-family{background:var(--rust)}.k-other{background:var(--sage)}
+.money-scroll{padding-top:18vh}
+.money-step{min-height:70vh;display:flex;flex-direction:column;justify-content:center;padding:28px 0;border-top:1px solid #b8beb6;opacity:.38;transform:translateY(20px);transition:opacity .35s,transform .35s}
+.money-step.is-active{opacity:1;transform:none}
+.money-step b{font-size:.72rem;letter-spacing:.15em;color:var(--rust);margin-bottom:10px}.money-step h3{font-size:clamp(1.8rem,2.8vw,3rem)}.money-step p{font-size:1rem;color:var(--sub);max-width:520px}
+.age-morph{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.72fr);gap:clamp(44px,6vw,92px);margin:70px 0 80px;padding:52px 0;border-top:1px solid var(--ink);border-bottom:1px solid #b9c1b8}
+.age-morph-sticky{position:sticky;top:8vh;align-self:start;min-height:72vh;display:flex;flex-direction:column;justify-content:center}
+.age-morph-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:30px}.age-morph-head span{font-size:.76rem;letter-spacing:.08em;color:var(--sub)}.age-morph-head strong{font-family:MaruBuri,serif;font-size:clamp(3.3rem,6vw,6.5rem);line-height:1;letter-spacing:-.06em;color:var(--rust)}
+.age-morph-bars{display:grid;gap:18px}.age-morph-row{display:grid;grid-template-columns:180px minmax(0,1fr) 74px;gap:14px;align-items:center}.age-morph-row>span{font-family:MaruBuri,serif;font-size:1rem}.age-morph-row>div{height:24px;background:#d0d4ce;overflow:hidden}.age-morph-row i{display:block;height:100%;width:0;background:var(--bank);transition:width .75s cubic-bezier(.22,.8,.22,1),background .35s}.age-morph-row strong{font-family:MaruBuri,serif;text-align:right;font-size:1.25rem}
+.age-morph-insight{margin-top:28px!important;padding-top:18px;border-top:1px solid #c0c5bf;font-family:MaruBuri,serif!important;font-size:clamp(1.25rem,1.8vw,1.75rem)!important;line-height:1.6!important;color:var(--ink)!important;letter-spacing:-.03em!important}
+.age-morph-steps{padding-top:10vh}.age-morph-steps article{min-height:58vh;display:flex;flex-direction:column;justify-content:center;border-top:1px solid #c2c7c0;opacity:.34;transition:opacity .3s}.age-morph-steps article.is-active{opacity:1}.age-morph-steps b{font-family:MaruBuri,serif;font-size:clamp(1.7rem,2.4vw,2.5rem);color:var(--rust)}.age-morph-steps p{margin-top:10px!important;font-size:.9rem!important;line-height:1.75!important;color:var(--sub)!important}
+.train-approach img{will-change:transform;transform-origin:center center}
+.ride-picture img{will-change:transform}
+@media(max-width:900px){
+  .money-journey{padding:80px 0 54px}.money-journey-grid,.age-morph{grid-template-columns:1fr;gap:30px}
+  .money-stage,.age-morph-sticky{position:sticky;top:0;min-height:58vh;background:#efeae0;z-index:3;padding:28px 0 20px}
+  .age-morph-sticky{background:var(--paper);min-height:52vh}
+  .money-scroll,.age-morph-steps{padding-top:0}
+  .money-step{min-height:46vh}.age-morph-steps article{min-height:42vh}
+}
+@media(max-width:768px){
+  .money-journey{padding:62px 0 40px}.money-stage{min-height:54vh}.money-stage h2{font-size:clamp(2.15rem,8vw,3.2rem)}
+  .money-total{margin-top:18px}.money-total strong{font-size:1.8rem}.money-meter{height:88px}
+  .money-key{grid-template-columns:1fr;gap:7px}.money-step{min-height:40vh;padding:22px 0}.money-step h3{font-size:1.65rem}.money-step p{font-size:.92rem}
+  .age-morph{margin:48px 0 54px;padding:38px 0}.age-morph-sticky{min-height:48vh}.age-morph-head strong{font-size:clamp(2.8rem,14vw,4.5rem)}
+  .age-morph-row{grid-template-columns:1fr 54px;gap:6px 10px}.age-morph-row>span{grid-column:1/-1;font-size:.9rem}.age-morph-row>div{height:17px}.age-morph-row strong{font-size:1rem}
+  .age-morph-insight{font-size:1.08rem!important;margin-top:18px!important}.age-morph-steps article{min-height:36vh}
+}
+@media(prefers-reduced-motion:reduce){
+  .money-meter>i,.money-step,.age-morph-row i,.age-morph-steps article{transition:none!important}
+}

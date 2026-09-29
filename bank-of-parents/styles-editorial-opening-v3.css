@@ -748,3 +748,83 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
     font-size:.66rem;
   }
 }
+
+
+/* 2026-09-29 exact unified media cards for steps 02-04 */
+.money-step[data-money-step="2"] .money-step-photo,
+.money-step[data-money-step="3"] .money-step-photo,
+.money-step[data-money-step="4"] .money-step-photo{
+  width:460px!important;
+  max-width:100%!important;
+  height:330px!important;
+  margin:20px auto 0!important;
+  display:grid!important;
+  grid-template-rows:290px auto!important;
+  overflow:visible!important;
+  background:transparent!important;
+}
+.money-step[data-money-step="2"] .money-step-photo img,
+.money-step[data-money-step="3"] .money-step-photo img,
+.money-step[data-money-step="4"] .money-step-photo img{
+  width:100%!important;
+  height:290px!important;
+  max-height:290px!important;
+  aspect-ratio:auto!important;
+  display:block!important;
+  transform:none!important;
+  border:0!important;
+}
+.money-step[data-money-step="2"] .money-step-photo img,
+.money-step[data-money-step="3"] .money-step-photo img{
+  object-fit:cover!important;
+}
+.money-step[data-money-step="2"] .money-step-photo img{
+  object-position:center 52%!important;
+}
+.money-step[data-money-step="3"] .money-step-photo img{
+  object-position:center 48%!important;
+}
+.money-step[data-money-step="4"] .money-step-photo{
+  background:#fff!important;
+}
+.money-step[data-money-step="4"] .money-step-photo img{
+  object-fit:contain!important;
+  object-position:center center!important;
+  padding:10px!important;
+  background:#fff!important;
+  border:1px solid #d3cec4!important;
+}
+.money-step[data-money-step="2"] .money-step-photo figcaption,
+.money-step[data-money-step="3"] .money-step-photo figcaption,
+.money-step[data-money-step="4"] .money-step-photo figcaption{
+  width:100%!important;
+  height:40px!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:8px 0 0!important;
+  font-size:.7rem!important;
+  line-height:1.45!important;
+  color:var(--sub)!important;
+}
+@media(max-width:768px){
+  .money-step[data-money-step="2"] .money-step-photo,
+  .money-step[data-money-step="3"] .money-step-photo,
+  .money-step[data-money-step="4"] .money-step-photo{
+    width:min(88vw,360px)!important;
+    height:280px!important;
+    grid-template-rows:245px auto!important;
+    margin:16px auto 0!important;
+  }
+  .money-step[data-money-step="2"] .money-step-photo img,
+  .money-step[data-money-step="3"] .money-step-photo img,
+  .money-step[data-money-step="4"] .money-step-photo img{
+    height:245px!important;
+    max-height:245px!important;
+  }
+  .money-step[data-money-step="2"] .money-step-photo figcaption,
+  .money-step[data-money-step="3"] .money-step-photo figcaption,
+  .money-step[data-money-step="4"] .money-step-photo figcaption{
+    height:35px!important;
+    font-size:.66rem!important;
+  }
+}

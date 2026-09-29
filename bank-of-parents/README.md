@@ -2,7 +2,7 @@
 
 ## 구성
 
-- `index.html`, `styles-editorial-opening-v2.css`, `story-opening.js`: 본문. Vanilla JavaScript, 외부 라이브러리 없음.
+- `index.html`, `styles-editorial-opening-v3.css`, `story-opening.js`: 본문. Vanilla JavaScript, 외부 라이브러리 없음.
 - `assets/train-approach-wide.webp`, `train-approach-mobile.webp`: 지하철이 아파트 앞을 지나가는 PC·모바일 첫 컷. AI 생성 연출 이미지.
 - `assets/subway-wide.webp`, `subway-mobile.webp`: 차 안에서 여성의 시선으로 이어지는 PC·모바일 두 번째 컷. AI 생성 연출 이미지.
 - `assets/contract-scene.webp`, `bank-desk.webp`, `funding-source.webp`: 제공된 아시아경제 이미지.

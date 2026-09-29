@@ -828,3 +828,23 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
     font-size:.66rem!important;
   }
 }
+
+
+/* 2026-09-29 preserve full image content in steps 02-04 */
+.money-step[data-money-step="2"] .money-step-photo,
+.money-step[data-money-step="3"] .money-step-photo,
+.money-step[data-money-step="4"] .money-step-photo{
+  background:#f4f1e9!important;
+}
+.money-step[data-money-step="2"] .money-step-photo img,
+.money-step[data-money-step="3"] .money-step-photo img,
+.money-step[data-money-step="4"] .money-step-photo img{
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#f4f1e9!important;
+  padding:0!important;
+}
+.money-step[data-money-step="4"] .money-step-photo img{
+  padding:8px!important;
+  background:#fff!important;
+}

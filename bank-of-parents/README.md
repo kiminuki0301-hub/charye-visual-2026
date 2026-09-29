@@ -8,11 +8,11 @@
 - `assets/family-table.webp`: 가족 간 자금 마련을 표현한 AI 생성 연출 이미지.
 - `iframe-test.html`: 실제 기사 본문 폭을 가정한 iframe 삽입 테스트 페이지.
 
-폰트는 Arial과 OS 기본 한글 대체 글꼴을 사용하며, 외부 웹폰트를 요청하지 않습니다. 원본 그래픽을 펼쳐서 볼 수 있고, JavaScript가 없어도 기사 문장과 수치가 보입니다.
+제목과 큰 숫자는 네이버의 무료 공개 글꼴 **마루 부리** Light·Regular·SemiBold를 로컬 WOFF2로 제공합니다. 본문과 자료 표기는 OS 기본 고딕체를 사용합니다. 서체 출처·이용 조건: [네이버 한글한글아름답게](https://hangeul.naver.com/font). 글꼴 파일은 [MaruBuri 웹폰트 배포본](https://github.com/fonts-archive/MaruBuri)에서 받았습니다. 외부 라이브러리는 없습니다. 원본 그래픽을 펼쳐서 볼 수 있고, JavaScript가 없어도 기사 문장과 수치가 보입니다.
 
 ## GitHub Pages
 
-저장소의 기본 브랜치 루트에 이 파일들을 올리고 Pages를 해당 브랜치에서 제공하면 `index.html`이 실행됩니다. 기사입력기 코드는 배포 URL과 실제 기사입력기의 스크립트 허용 범위를 확인한 뒤 확정합니다.
+현재 `kiminuki0301-hub/charye-visual-2026` 저장소의 `bank-of-parents/` 폴더에서 GitHub Pages로 배포합니다. 기존 차례상 프로젝트의 루트 파일은 유지합니다. 기사입력기 코드는 실제 기사입력기의 스크립트 허용 범위를 확인한 뒤 확정합니다.
 
 ## iframe 높이
 

@@ -694,3 +694,57 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
     max-height:250px;
   }
 }
+
+
+/* 2026-09-29 unify money-step media widths */
+.money-step[data-money-step="2"] .money-step-photo,
+.money-step[data-money-step="3"] .money-step-photo,
+.money-step[data-money-step="4"] .money-step-photo{
+  width:min(100%,460px);
+  max-width:460px;
+  margin:20px auto 0;
+  background:transparent;
+}
+.money-step[data-money-step="2"] .money-step-photo img,
+.money-step[data-money-step="3"] .money-step-photo img,
+.money-step[data-money-step="4"] .money-step-photo img{
+  width:100%;
+  height:auto!important;
+  max-height:none!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center center;
+  transform:none!important;
+  display:block;
+}
+.money-step[data-money-step="2"].is-active .money-step-photo img,
+.money-step[data-money-step="3"].is-active .money-step-photo img,
+.money-step[data-money-step="4"].is-active .money-step-photo img{
+  transform:none!important;
+}
+.money-step[data-money-step="2"] .money-step-photo figcaption,
+.money-step[data-money-step="3"] .money-step-photo figcaption,
+.money-step[data-money-step="4"] .money-step-photo figcaption{
+  width:100%;
+  max-width:460px;
+  margin:0 auto;
+  padding-top:8px;
+  font-size:.7rem;
+  line-height:1.55;
+  color:var(--sub);
+}
+@media(max-width:768px){
+  .money-step[data-money-step="2"] .money-step-photo,
+  .money-step[data-money-step="3"] .money-step-photo,
+  .money-step[data-money-step="4"] .money-step-photo{
+    width:min(88vw,360px);
+    max-width:360px;
+    margin:16px auto 0;
+  }
+  .money-step[data-money-step="2"] .money-step-photo figcaption,
+  .money-step[data-money-step="3"] .money-step-photo figcaption,
+  .money-step[data-money-step="4"] .money-step-photo figcaption{
+    max-width:360px;
+    font-size:.66rem;
+  }
+}

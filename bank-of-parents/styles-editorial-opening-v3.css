@@ -231,3 +231,44 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
   .last-copy .last-preface{max-width:76%;font-size:.92rem!important}
   .last-copy h2{max-width:80%;font-size:clamp(1.62rem,7.5vw,2.25rem)}
 }
+
+/* 2026-09-29 desktop ending text fix */
+@media(min-width:901px){
+  .last-ride{
+    min-height:720px;
+    height:min(94svh,920px);
+  }
+  .last-copy{
+    width:min(calc(100% - 96px),var(--width));
+    margin-inline:auto;
+    padding-left:50%;
+    padding-right:2%;
+    justify-content:center;
+    align-items:flex-start;
+    text-align:left;
+  }
+  .last-copy .last-preface{
+    width:100%;
+    max-width:620px;
+    margin:0 0 1.05em!important;
+    font-size:clamp(1.2rem,1.45vw,1.7rem)!important;
+    line-height:1.55!important;
+    word-break:keep-all;
+    overflow-wrap:normal;
+  }
+  .last-copy h2{
+    width:100%;
+    max-width:760px;
+    margin:0;
+    font-size:clamp(2.8rem,4.15vw,5.1rem);
+    line-height:1.24;
+    letter-spacing:-.045em;
+    word-break:keep-all;
+    overflow-wrap:normal;
+  }
+  .last-copy h2 br{display:none}
+}
+@media(min-width:1440px){
+  .last-copy{padding-left:52%}
+  .last-copy h2{max-width:790px;font-size:clamp(3.1rem,3.9vw,5.35rem)}
+}

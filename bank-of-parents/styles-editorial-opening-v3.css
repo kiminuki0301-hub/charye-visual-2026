@@ -76,3 +76,38 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
 .generations .generation-footnotes p:not(.overline):not(.source){font-family:"Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif!important;font-size:.76rem!important;line-height:1.7!important;letter-spacing:0!important;color:var(--sub)!important;margin:0!important;padding-top:12px;border-top:1px solid #b9c1b8}
 .generation-footnotes strong{color:var(--ink)}
 @media(max-width:768px){.generation-table-wrap{margin-left:-19px;margin-right:-19px;padding-left:19px}.generation-table{min-width:860px}.generation-table th,.generation-table td{padding:14px 12px}.generation-table thead th{font-size:1rem}.generation-table td span{font-size:.92rem}.generation-table td strong{font-size:1.18rem}.generation-footnotes{grid-template-columns:1fr;gap:8px;margin-top:15px}.generations .generation-footnotes p:not(.overline):not(.source){font-size:.72rem!important}}
+
+/* Age funding comparison: visual bar charts */
+.generation-graphs{display:grid;grid-template-columns:1fr;gap:28px;border-top:1px solid var(--ink);padding-top:24px}
+.gen-chart{padding:0 0 30px;border-bottom:1px solid #b9c1b8}
+.gen-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:18px}
+.gen-head h3{margin:0;font-size:clamp(1.85rem,2.7vw,2.9rem)}
+.generations .gen-head p{margin:0!important;font-family:"Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif!important;font-size:.8rem!important;line-height:1.5!important;letter-spacing:.02em!important;color:var(--rust)!important;font-weight:700}
+.gen-bars{display:grid;gap:10px}
+.gen-bar{display:grid;grid-template-columns:210px minmax(0,1fr) 78px;gap:14px;align-items:center}
+.gen-bar .label{font-family:MaruBuri,"Nanum Myeongjo",serif;font-size:1.02rem;line-height:1.4;letter-spacing:-.025em}
+.gen-bar i{display:block;width:100%;height:20px;background:#c7cdc6;position:relative;overflow:hidden}
+.gen-bar i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--bank);transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.generations.in-view .gen-bar i::after{transform:none}
+.gen-bar strong{font-family:MaruBuri,serif;font-size:1.28rem;line-height:1.2;letter-spacing:-.04em;text-align:right;font-weight:600}
+.gen-bar.asset i::after{background:var(--sage)}
+.gen-bar.family i::after{background:var(--rust)}
+.gen-bar.lease i::after{background:#9d8a72}
+.gen-bar.saving i::after{background:#aeb8ae}
+.gen-bar.loan i::after{background:var(--bank)}
+.gen-bar.family strong{color:var(--rust)}
+.gen-note{margin:18px 0 0!important;padding-top:13px;border-top:1px solid rgba(84,96,88,.18);font-family:"Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif!important;font-size:.76rem!important;line-height:1.75!important;letter-spacing:0!important;color:var(--sub)!important}
+.gen-note strong{font-family:MaruBuri,serif!important;font-weight:600!important;color:var(--ink)}
+.generation-source{margin-top:18px!important}
+@media(max-width:768px){
+  .generation-graphs{gap:22px;padding-top:16px}
+  .gen-chart{padding-bottom:24px}
+  .gen-head{display:block;margin-bottom:14px}
+  .generations .gen-head p{margin-top:5px!important;font-size:.72rem!important}
+  .gen-bar{grid-template-columns:1fr 58px;gap:6px 10px}
+  .gen-bar .label{grid-column:1/-1;font-size:.96rem}
+  .gen-bar i{height:16px}
+  .gen-bar strong{font-size:1.08rem}
+  .gen-note{font-size:.72rem!important;line-height:1.68!important}
+}
+@media(prefers-reduced-motion:reduce){.gen-bar i::after{transform:none!important;transition:none!important}}

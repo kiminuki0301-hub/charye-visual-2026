@@ -1,6 +1,20 @@
 (() => {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const animated = document.querySelectorAll('.price,.borrowing,.generations');
+  const passingTrain = document.querySelector('.train-approach img');
+  if (passingTrain && !reduced) {
+    let scheduled = false;
+    const moveTrain = () => {
+      scheduled = false;
+      const rect = passingTrain.parentElement.parentElement.getBoundingClientRect();
+      const progress = Math.max(0, Math.min(1, -rect.top / Math.max(1, rect.height)));
+      passingTrain.style.setProperty('--train-shift', `${Math.round((progress - .5) * 44)}px`);
+    };
+    window.addEventListener('scroll', () => {
+      if (!scheduled) { scheduled = true; requestAnimationFrame(moveTrain); }
+    }, { passive: true });
+    moveTrain();
+  }
   if (!reduced && 'IntersectionObserver' in window) {
     const reveal = new IntersectionObserver(entries => {
       entries.forEach(entry => {

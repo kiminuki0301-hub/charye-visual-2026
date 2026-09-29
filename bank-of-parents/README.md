@@ -3,7 +3,8 @@
 ## 구성
 
 - `index.html`, `styles-editorial.css`, `story.js`: 본문. Vanilla JavaScript, 외부 라이브러리 없음.
-- `assets/subway-wide.webp`, `subway-mobile.webp`: 별도 PC·모바일 연출 이미지.
+- `assets/train-approach-wide.webp`, `train-approach-mobile.webp`: 지하철이 아파트 앞을 지나가는 PC·모바일 첫 컷. AI 생성 연출 이미지.
+- `assets/subway-wide.webp`, `subway-mobile.webp`: 차 안에서 여성의 시선으로 이어지는 PC·모바일 두 번째 컷. AI 생성 연출 이미지.
 - `assets/contract-scene.webp`, `bank-desk.webp`, `funding-source.webp`: 제공된 아시아경제 이미지.
 - `assets/gangnam-apartments.jpg`: 두 번째 원문 기사에 실린 강남 아파트 전경. 사진 설명과 윤동주 기자 크레딧을 이미지 바로 아래 표기.
 - `assets/family-table.webp`: 가족 간 자금 마련을 표현한 AI 생성 연출 이미지.
@@ -23,7 +24,7 @@
 
 - 2026년 1~7월 계약 기준 국토교통부 자료를 김종양 의원실이 분석한 기사 2건.
 - 자금 구성의 22.8%는 **금액 비중**, 사적 차입 44.0%와 증여·상속 48.4%는 **계획서 기재율**입니다. 합산하지 않습니다.
-- 지하철·가족 대화 이미지는 실제 취재 사진이 아닌 연출 이미지입니다.
+- 지하철·가족 대화 이미지는 실제 취재 사진이 아닌 연출 이미지입니다. 도입 독백 역시 실제 인터뷰 발언이 아닌 가상의 문장으로 표시합니다.
 - 제공 사진의 확인되지 않은 촬영 기자명은 넣지 않았습니다. 원본 자금 구성 그래픽을 펼쳐 보여주는 곳에만 이영우 아시아경제 크레딧을 표시했습니다.
 
 ## 화면 QA

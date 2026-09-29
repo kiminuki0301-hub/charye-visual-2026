@@ -36,3 +36,9 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
 @media(max-width:430px){.last-copy h2{font-size:clamp(2rem,8vw,2.65rem)}.last-copy .source{font-size:.72rem}}
 .generation-notes{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1000px;border-top:1px solid #b9c1b8;padding-top:15px;margin-top:13px}.generations .generation-notes p:not(.overline):not(.source){font-family:"Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif;font-size:.8rem;line-height:1.7;letter-spacing:0;color:#5e6864;margin:0}
 @media(max-width:768px){.generation-notes{grid-template-columns:1fr;gap:10px}.generations .generation-notes p:not(.overline):not(.source){font-size:.76rem;line-height:1.65}}
+
+.price-question{font-family:MaruBuri,"Nanum Myeongjo",serif!important;font-size:clamp(1.45rem,2.2vw,2rem)!important;font-weight:600!important;line-height:1.6!important;letter-spacing:-.035em!important;color:var(--ink)!important;margin:1.55em 0 0!important}
+.fund-note{margin-top:18px;padding:14px 0 0;border-top:1px solid #cdd2cb;color:var(--sub)}
+.fund-note p{font-family:"Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif!important;font-size:.75rem!important;line-height:1.65!important;letter-spacing:0!important;margin:0 0 .45em!important;color:var(--sub)!important}
+.fund-note p:last-child{margin-bottom:0!important}
+@media(max-width:768px){.price-question{font-size:1.28rem!important;margin-top:1.35em!important}.fund-note{margin-top:15px;padding-top:12px}.fund-note p{font-size:.72rem!important;line-height:1.62!important}}

@@ -607,19 +607,25 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
 }
 
 
-/* Money journey media system — single source of truth */
+/* Money journey layout — balanced editorial grid */
+.money-journey-grid{
+  grid-template-columns:minmax(0,1fr) minmax(500px,.92fr);
+  gap:clamp(52px,5vw,78px);
+}
 .money-scroll{
   width:100%;
+  min-width:0;
 }
 .money-step{
   width:100%;
+  align-items:flex-start;
 }
 .money-step > b,
 .money-step > h3,
 .money-step > p,
 .money-step > figure{
   width:100%;
-  max-width:520px;
+  max-width:580px;
   margin-left:0;
   margin-right:0;
 }
@@ -637,7 +643,7 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
   max-height:none;
   aspect-ratio:auto;
   object-fit:contain;
-  object-position:center;
+  object-position:center center;
   transform:none!important;
   border:0;
   background:transparent;
@@ -655,7 +661,20 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
   background:#fff;
   border:1px solid #d3cec4;
 }
+@media(max-width:1100px){
+  .money-journey-grid{
+    grid-template-columns:minmax(0,1fr) minmax(420px,.9fr);
+    gap:42px;
+  }
+  .money-step > b,
+  .money-step > h3,
+  .money-step > p,
+  .money-step > figure{
+    max-width:520px;
+  }
+}
 @media(max-width:900px){
+  .money-journey-grid{grid-template-columns:1fr;gap:30px}
   .money-step > b,
   .money-step > h3,
   .money-step > p,
@@ -664,15 +683,10 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
   }
 }
 @media(max-width:768px){
-  .money-step-photo{
-    margin-top:18px!important;
-  }
+  .money-step-photo{margin-top:18px!important}
   .money-step-photo figcaption{
     margin-top:7px;
     font-size:.66rem;
     line-height:1.5;
   }
-}
-@media(prefers-reduced-motion:reduce){
-  .money-step-photo img{transform:none!important}
 }

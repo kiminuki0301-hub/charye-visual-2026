@@ -2,7 +2,7 @@
 
 ## 구성
 
-- `index.html`, `styles-editorial-opening.css`, `story-opening.js`: 본문. Vanilla JavaScript, 외부 라이브러리 없음.
+- `index.html`, `styles-editorial-opening-v2.css`, `story-opening.js`: 본문. Vanilla JavaScript, 외부 라이브러리 없음.
 - `assets/train-approach-wide.webp`, `train-approach-mobile.webp`: 지하철이 아파트 앞을 지나가는 PC·모바일 첫 컷. AI 생성 연출 이미지.
 - `assets/subway-wide.webp`, `subway-mobile.webp`: 차 안에서 여성의 시선으로 이어지는 PC·모바일 두 번째 컷. AI 생성 연출 이미지.
 - `assets/contract-scene.webp`, `bank-desk.webp`, `funding-source.webp`: 제공된 아시아경제 이미지.
@@ -10,7 +10,7 @@
 - `assets/family-table.webp`: 가족 간 자금 마련을 표현한 AI 생성 연출 이미지.
 - `iframe-test.html`: 실제 기사 본문 폭을 가정한 iframe 삽입 테스트 페이지.
 
-제목과 큰 숫자는 네이버의 무료 공개 글꼴 **마루 부리** Light·Regular·SemiBold를 로컬 WOFF2로 제공합니다. 본문과 자료 표기는 OS 기본 고딕체를 사용합니다. 서체 출처·이용 조건: [네이버 한글한글아름답게](https://hangeul.naver.com/font). 글꼴 파일은 [MaruBuri 웹폰트 배포본](https://github.com/fonts-archive/MaruBuri)에서 받았습니다. 외부 라이브러리는 없습니다. 원본 그래픽을 펼쳐서 볼 수 있고, JavaScript가 없어도 기사 문장과 수치가 보입니다.
+제목·설명 문장·큰 숫자는 네이버의 무료 공개 글꼴 **마루 부리** Light·Regular·SemiBold를 로컬 WOFF2로 제공합니다. 작은 자료 표기와 차트 레이블은 OS 기본 고딕체를 사용합니다. 서체 출처·이용 조건: [네이버 한글한글아름답게](https://hangeul.naver.com/font). 글꼴 파일은 [MaruBuri 웹폰트 배포본](https://github.com/fonts-archive/MaruBuri)에서 받았습니다. 외부 라이브러리는 없습니다. 원본 그래픽을 펼쳐서 볼 수 있고, JavaScript가 없어도 기사 문장과 수치가 보입니다.
 
 ## GitHub Pages
 

@@ -664,3 +664,33 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
   .money-source-graphic{width:100%}
   .money-source-graphic figcaption{text-align:left;font-size:.66rem}
 }
+
+
+/* 2026-09-29 family photo size correction */
+.money-step[data-money-step="3"] .money-step-photo-family{
+  width:min(100%,420px);
+  max-width:420px;
+  margin:20px auto 0;
+}
+.money-step[data-money-step="3"] .money-step-photo-family img{
+  width:100%;
+  height:auto!important;
+  max-height:310px;
+  object-fit:contain!important;
+  object-position:center center;
+  transform:none!important;
+}
+.money-step[data-money-step="3"] .money-step-photo-family figcaption{
+  max-width:420px;
+  margin:0 auto;
+}
+@media(max-width:768px){
+  .money-step[data-money-step="3"] .money-step-photo-family{
+    width:min(88vw,360px);
+    max-width:360px;
+    margin:16px auto 0;
+  }
+  .money-step[data-money-step="3"] .money-step-photo-family img{
+    max-height:250px;
+  }
+}

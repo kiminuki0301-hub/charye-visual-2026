@@ -59,3 +59,20 @@ h1,h2,h3{font-family:MaruBuri,"Nanum Myeongjo",serif;font-weight:600;letter-spac
 .age-note strong{font-family:MaruBuri,serif;font-weight:600!important;color:var(--rust)}
 .generation-source{margin-top:18px!important}
 @media(max-width:768px){.generation-breakdown{grid-template-columns:1fr;gap:0;padding-top:8px}.age-card.age-60{grid-column:auto}.age-card{padding:25px 0}.age-head{margin-bottom:13px}.age-head>span{font-size:2rem}.age-head>strong{font-size:.72rem}.age-card li{grid-template-columns:38px 1fr auto;gap:9px;padding:9px 0}.age-card li span{font-size:1rem}.age-card li strong{font-size:1.18rem}.age-note{font-size:.74rem!important}}
+
+.generation-table-wrap{overflow-x:auto;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);-webkit-overflow-scrolling:touch}
+.generation-table{width:100%;border-collapse:collapse;min-width:980px;table-layout:fixed}
+.generation-table th,.generation-table td{padding:18px 16px;border-right:1px solid rgba(84,96,88,.18);border-bottom:1px solid rgba(84,96,88,.18);vertical-align:top}
+.generation-table th:last-child,.generation-table td:last-child{border-right:0}
+.generation-table thead th{font-family:MaruBuri,serif;font-size:1.15rem;line-height:1.35;text-align:left;background:rgba(255,255,255,.22)}
+.generation-table thead th:first-child{width:70px;font-size:.76rem;color:var(--sub)}
+.generation-table thead span{display:block;margin-top:5px;font-family:"Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif;font-size:.68rem;line-height:1.45;color:var(--rust);letter-spacing:0}
+.generation-table tbody th{font-size:.72rem;color:#7b867f;text-align:left;font-weight:700}
+.generation-table td span{display:block;font-family:MaruBuri,serif;font-size:1rem;line-height:1.45;letter-spacing:-.025em}
+.generation-table td strong{display:block;margin-top:5px;font-family:MaruBuri,serif;font-size:1.35rem;line-height:1.2;letter-spacing:-.04em}
+.generation-table tbody tr:first-child td strong{color:var(--rust)}
+.generation-table td.empty{color:#9aa39d;text-align:center;vertical-align:middle}
+.generation-footnotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.generations .generation-footnotes p:not(.overline):not(.source){font-family:"Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif!important;font-size:.76rem!important;line-height:1.7!important;letter-spacing:0!important;color:var(--sub)!important;margin:0!important;padding-top:12px;border-top:1px solid #b9c1b8}
+.generation-footnotes strong{color:var(--ink)}
+@media(max-width:768px){.generation-table-wrap{margin-left:-19px;margin-right:-19px;padding-left:19px}.generation-table{min-width:860px}.generation-table th,.generation-table td{padding:14px 12px}.generation-table thead th{font-size:1rem}.generation-table td span{font-size:.92rem}.generation-table td strong{font-size:1.18rem}.generation-footnotes{grid-template-columns:1fr;gap:8px;margin-top:15px}.generations .generation-footnotes p:not(.overline):not(.source){font-size:.72rem!important}}

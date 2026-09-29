@@ -2,7 +2,7 @@
 
 ## 구성
 
-- `index.html`, `styles.css`, `story.js`: 본문. Vanilla JavaScript, 외부 라이브러리 없음.
+- `index.html`, `styles-editorial.css`, `story.js`: 본문. Vanilla JavaScript, 외부 라이브러리 없음.
 - `assets/subway-wide.webp`, `subway-mobile.webp`: 별도 PC·모바일 연출 이미지.
 - `assets/contract-scene.webp`, `bank-desk.webp`, `funding-source.webp`: 제공된 아시아경제 이미지.
 - `assets/family-table.webp`: 가족 간 자금 마련을 표현한 AI 생성 연출 이미지.

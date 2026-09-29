@@ -28,7 +28,7 @@
   }, {passive:true});
   paintScroll();
 
-  const animated = document.querySelectorAll('.price,.borrowing,.generations');
+  const animated = document.querySelectorAll('.price,.borrowing,.generations,.story-photo-break');
   if (!reduced && 'IntersectionObserver' in window) {
     const reveal = new IntersectionObserver(entries => {
       entries.forEach(entry => {
